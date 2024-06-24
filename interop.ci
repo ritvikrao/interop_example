@@ -1,0 +1,17 @@
+mainmodule interop
+{
+    readonly CProxy_Main mainProxy;
+    readonly CProxy_NG ng;
+    mainchare Main
+    {
+        entry Main(CkArgMsg* m);
+        entry [reductiontarget] void done(int done);
+    };
+    nodegroup NG
+    {
+        entry NG();
+        entry void run_mpi();
+        entry void mpi_work_done();
+        entry void charm_message();
+    };
+};
